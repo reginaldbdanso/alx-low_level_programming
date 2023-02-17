@@ -8,16 +8,25 @@
 int main(void)
 {
 char lowerc;
-char upperc;
- 
-for (lowerc = 'a'; lowerc <= 'z'; lowerc++)
+lowerc = 'a';
+
+while (lowerc <= 'z')
+{
+if (lowerc == 'e')
+{
+continue;
+}
+else if (lowerc == 'q')
+{
+continue;
+}
+else
 {
 putchar(lowerc);
+lowerc++;
 }
-for (upperc = 'A'; upperc <= 'Z'; upperc++)
-{
-putchar(upperc);
 }
+
 putchar('\n');
 
 return (0);
