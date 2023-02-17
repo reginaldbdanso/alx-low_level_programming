@@ -20,8 +20,10 @@ if (lowerc == 'e' || lowerc == 'q')
 else
 {
 putchar(lowerc);
-lowerc++;
 }
+
+lowerc++;
+
 }
 
 putchar('\n');
