@@ -2,7 +2,9 @@
 /*void print_alphabet(void);*/
 
 /**
- *Function to print out alphabets in lowercase
+ * print_alphabet - to print out alphabets in lowercase
+ *
+ *Return:
  */
 
 void print_alphabet(void)
