@@ -15,6 +15,8 @@ int n;
 int num3;
 int num5;
 int sum;
+num3 = 0;
+num5 = 0;
 n = 0;
 
 while (n < 1024)
