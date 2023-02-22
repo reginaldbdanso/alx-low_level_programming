@@ -14,8 +14,8 @@ long int a;
 long int b;
 long int c;
 long int sum;
-a = 1;
-b = 2;
+a = 0;
+b = 1;
 c = 0;
 
 while (c < 4000000)
