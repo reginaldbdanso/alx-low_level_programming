@@ -23,14 +23,15 @@ for (j = 1; j <= n; j++)
 {
 _putchar(',');
 _putchar(' ');
-_putchar(' ');
 product = (i *j);
 if (product <= 9)
 {
 _putchar(' ');
+_putchar(' ');
 }
 else if (product > 9 && product <= 99)
 {
+_putchar(' ');
 _putchar((product / 10) + '0');
 }
 else
