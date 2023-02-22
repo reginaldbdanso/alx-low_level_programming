@@ -9,26 +9,26 @@
  */
 int main(void)
 {
-int a;
-int b;
+unsigned long long int g;
+unsigned long long int h;
 int i;
-int c;
-a = 1;
-b = 2;
+unsigned long long int j;
+g = 1;
+h = 2;
 
-printf("%d, %d, ", a, b);
+printf("%d, %d, ", g, h);
 
 for (i = 3; i <= 50; i++)
 {
-c = a + b;
-printf("%d", c);
+j = g + h;
+printf("%d", j);
 
 if (i != 50)
 {
 printf(", ");
 }
-a = b;
-b = c;
+g = h;
+h = j;
 }
 
 printf("\n");
