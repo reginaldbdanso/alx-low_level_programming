@@ -1,15 +1,14 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
+#include "main.h"
 /**
  * main - Entry point
  *
  *Return: Always 0 (Success)
  */
-int main(void)
+void positive_or_negative(int n)
 {
-int n;
 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
@@ -26,5 +25,5 @@ else
 {
 printf("%d is zero\n", n);
 }
-return (0);
+return;
 }
