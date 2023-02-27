@@ -18,7 +18,7 @@ mcursor++;
 s++;
 }
 s--;
-while (mcursor >= 0)
+while (mcursor > 0)
 {
 _putchar(*s);
 mcursor--;
