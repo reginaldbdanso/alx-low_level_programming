@@ -10,22 +10,22 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-        int i, j, m, newlen;
+	int i, j, m, newlen;
 
-        i = j = 0;
+	i = j = 0;
 
-        while (dest[i] != '\0')
-        {
-                i++;
-        }
-        while (src[j] != '\0')
-        {
-                j++;
-        }
-        newlen = i + n;
+	while (dest[i] != '\0')
+	{
+		i++;
+	}
+	while (src[j] != '\0')
+	{
+		j++;
+	}
+	newlen = i + n;
 
-        for (m = i; m < newlen; m++)
-        {
+	for (m = i; m < newlen; m++)
+	{
 		if (m == 98)
 		{
 			break;
@@ -35,5 +35,5 @@ char *_strncat(char *dest, char *src, int n)
 			dest[m] = *src++;
 		}
 	}
-        return (dest);
+	return (dest);
 }
