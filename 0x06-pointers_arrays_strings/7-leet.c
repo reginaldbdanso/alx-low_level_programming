@@ -20,7 +20,7 @@ char *leet(char *n)
 			{
 				n[i] = string2[j];
 			}
-			j++
+			j++;
 		}
 		i++;
 	}
