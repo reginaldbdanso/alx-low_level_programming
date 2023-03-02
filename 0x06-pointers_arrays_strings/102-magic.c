@@ -9,10 +9,10 @@ int main(void)
 {
 	int n;
 	int a[5];
-	int *b;
+	int *p;
 
 	a[2] = 1024;
-	b = &n;
+	p = &n;
 	/**
 	 * write your line of code here...
 	 *Remember:
@@ -21,8 +21,8 @@ int main(void)
 	 * - only one statement
 	 * - you are not allowed to code anything else than this line of code
 	 */
-	*(b + 5) = 98;
+	*(p + 5) = 98;
 	/* ...so that this prints 98\n */
-	printf("a[2] = %d\n", *(a + 2));
+	printf("a[2] = %d\n", a[2]);
 	return (0);
 }
