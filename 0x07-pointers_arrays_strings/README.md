@@ -1,1 +1,3 @@
-#This Readme file will describe what this Repo is about.
+#This Readme file will describe the project 0x07- even more pointers
+
+1.
