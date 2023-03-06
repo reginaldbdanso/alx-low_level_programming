@@ -2,9 +2,9 @@
 
 /**
  * _strchr - locates a character in a string
- * @s: pointer
- * @c: character
- * Return: Always 0 (Success)
+ * @s: the string being searched
+ * @c: character being located
+ * Return: a ponter if found or a NULL if not found
  */
 char *_strchr(char *s, char c)
 {
@@ -13,10 +13,7 @@ char *_strchr(char *s, char c)
 	for (counter = 0; s[counter] != '\0'; counter++)
 	{
 		if (s[counter] == c)
-		{
 			return (s + counter);
-			break;
-		}
 	}
 	return ('\0');
 }
