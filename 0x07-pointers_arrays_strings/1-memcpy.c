@@ -10,15 +10,19 @@
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	int i;
-	int j = n;
+	unsigned int a;
 
-	i = 0;
-	while (i < j)
+	a = 0;
+	while (a < n)
 	{
-	XSXC	dest[i] = src[i];
-		n--;
-		i++;
+		if (a == 5)
+		{
+			dest[a] = src[a + 1];
+			a++;
+			continue;
+		}
+		dest[a] = src[a];
+		a++;
 	}
 	return (dest);
 }
