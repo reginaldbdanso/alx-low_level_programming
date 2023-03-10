@@ -2,17 +2,16 @@
 
 /**
  * _puts - prints a string, followed by a new line, to stdout.
- * @str: pointer
+ * @s: pointer
  * Return:
  */
-void _puts(char *str)
+void _puts(char *s)
 {
-
-while (*str != 0)
-{
-_putchar(*str);
-str++;
-}
-_putchar('\n');
-return;
+	while (*s != 0)
+	{
+		_putchar(*s);
+		s++;
+	}
+	_putchar('\n');
+	return;
 }
