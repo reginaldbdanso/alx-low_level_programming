@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	int counter;
 
 	counter = 0;
-	if (argc == 1)
+	if (argc < 2 || argc > 3)
 		printf("Error\n");
 	else
 		printf("%d\n", atoi(argv[counter + 1]) * atoi(argv[counter + 2]));
