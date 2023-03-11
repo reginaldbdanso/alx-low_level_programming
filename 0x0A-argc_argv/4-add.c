@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
 					result += _atoi(argv[i]);
 			}
 		}
-		printf("%d\n", result);		
+		printf("%d\n", result);
 	}
 	else
 		printf("0\n");
