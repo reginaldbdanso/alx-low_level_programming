@@ -55,28 +55,25 @@ int _atoi(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int i, j, slen, result;
+	int i, result;
 
-	result = slen = 0;
+	result = 0;
 	if (argc != 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			slen = strlen(argv[i]);
-			for (j = 0; j < slen; j++)
+			if (!((*argv[i] >= '0') && (*argv[i] <= '9')))
 			{
-				if (!((*(argv[i] + j) >= '0') && (*(argv[i] + j) <= '9')))
-				{
-					printf("Error\n");
-					return (1);
-				}
-
-				else
-					result += _atoi(argv[i]);
+				printf("Error\n");
+				return (1);
 			}
+
+			else
+				result += _atoi(argv[i]);
 		}
-		printf("%d\n", result);
 	}
+		printf("%d\n", result);
+
 	else
 		printf("0\n");
 
