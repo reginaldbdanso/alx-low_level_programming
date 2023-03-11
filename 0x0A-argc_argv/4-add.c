@@ -67,13 +67,11 @@ int main(int argc, char *argv[])
 				printf("Error\n");
 				return (1);
 			}
-
 			else
 				result += _atoi(argv[i]);
 		}
-	}
 		printf("%d\n", result);
-
+	}
 	else
 		printf("0\n");
 
