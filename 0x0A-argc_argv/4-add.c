@@ -1,4 +1,4 @@
-
+#include <string.h>
 #include <stdio.h>
 #include "main.h"
 
@@ -55,23 +55,27 @@ int _atoi(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int i, result;
+	int i, j, slen, result;
 
-	result = 0;
+	result = slen = 0;
 	if (argc != 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (!((*argv[i] >= '0') && (*argv[i] <= '9')))
+			slen = strlen(argv[i]);
+			for (j = 0; j < slen; j++)
 			{
-				printf("Error\n");
-				return (0);
-			}
+				if (!((*(argv[i] + j) >= '0') && (*(argv[i] + j) <= '9')))
+				{
+					printf("Error\n");
+					return (0);
+				}
 
-			else
-				result += _atoi(argv[i]);
+				else
+					result += _atoi(argv[i]);
+			}
 		}
-		printf("%d\n", result);
+		printf("%d\n", result);		
 	}
 	else
 		printf("0\n");
