@@ -55,7 +55,7 @@ int _atoi(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int i, j, slen, result;
+	unsigned int i, j, slen, result;
 
 	result = slen = 0;
 	if (argc != 1)
