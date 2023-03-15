@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 		full_len += (strlen(av[i]) + 1);
 
-	str = (char *) malloc(full_len * sizeof(char));
+	str = (char *) malloc(full_len * sizeof(char) + 1);
 	if (str == NULL)
 	{
 		printf("Memory allocation failed\n");
