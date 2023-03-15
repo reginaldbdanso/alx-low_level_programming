@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include "main.h"
+#include <stdlib.h>
+#include <string.h>
+
+/**
+ * argstostr - concatenates all the arguments of your program.
+ * @ac: argument count
+ * @av: actual arguments
+ *Return: pointer to new space in memory
+ */
+
+char *argstostr(int ac, char **av)
+{
+	char **ptr;
+	unsigned int i, j, l;
+
+	l = 0;
+	if ((ac == 0) || (av == NULL))
+		return (NULL);
+
+        ptr = (char **)malloc(ac * sizeof(char *));
+        if (ptr == NULL)
+        {
+                printf("Memory allocation failed\n");
+                free(ptr);
+                return (NULL);
+        }
+        for (i = 0; i < ac; i++)
+        {
+	ptr[i] = (char *)malloc(strlen(av) * sizeof(char));
+                if (ptr[i] == NULL)
+                {
+                        printf("Memory allocation failed for row %d\n", i);
+                        for (j = 0; j < i; j++)
+                        {
+                                free(ptr[j]);
+                        }
+                        free(ptr);
+                        return (NULL);
+                }
+        }
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; j < strlen(av[i]); j++)
+		{
+			ptr[j] = av[l];
+			l++;
+		}
+	}
+	return (*av);
+}
