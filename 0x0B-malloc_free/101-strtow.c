@@ -12,7 +12,7 @@
 char **strtow(char *str)
 {
 	char **ptr;
-	int i, j, count, count2, slen, full_len;
+	int i, j, k, count, count2, slen, full_len;
 
 	if ((str == NULL) || (strlen(str) == 0))
 		return (NULL);
@@ -61,13 +61,15 @@ char **strtow(char *str)
 		}
 		else
 		{
+			k = 0;
 			while ((str[i] != ' ') || (str[i] != '\0'))
 			{
-				*ptr[j] = str[i];
-				j++;
+				*(ptr[j] + k) = str[i];
+				k++;
 				i++;
 			}
-			*ptr[j++] = '\n';
+			*(ptr[j] + k) = '\n';
+			j++;
 		}
 	}
 /**	post = 0;
