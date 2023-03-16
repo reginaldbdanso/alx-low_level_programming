@@ -46,6 +46,5 @@ void *malloc_checked(unsigned int b)
 		_puts("Memory allocation failed");
 		exit(98);
 	}
-	else
-		return (ptr);
+	return (ptr);
 }
