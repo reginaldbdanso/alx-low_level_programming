@@ -13,12 +13,12 @@ void *malloc_checked(unsigned int b)
 {
 	int *ptr;
 
-	ptr = malloc(b * sizeof(int));
+	ptr = malloc(b);
 	if (ptr == NULL)
 	{
 		printf("Memory allocation failed\n");
-		free(ptr);
+
 		exit(98);
 	}
-
+	return (ptr);
 }
