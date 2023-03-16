@@ -3,7 +3,7 @@
 
 /**
  * _calloc - allocates memory for an array using malloc
- * @nmemb: number of elements 
+ * @nmemb: number of elements
  * @size: array size
  * Return: pointer to new allocated space in memory
  */
@@ -22,7 +22,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	for (i = 0; i < (int)nmemb; i++)
 	{
-	  ptr[i] = 0;
+		ptr[i] = 0;
 	}
 
 	return (ptr);
