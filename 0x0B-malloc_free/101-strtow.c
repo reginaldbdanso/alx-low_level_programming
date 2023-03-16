@@ -21,25 +21,25 @@ char **strtow(char *str)
 	while (str[i] != '\0')
 	{
 		if(str[i] == ' ')
-	  		count++;
+			count++;
 		i++;
 	}
 	i = 0;
 	while (str[i] != '\0')
 	{
-	  if(str[i] == ' ')
-		  {
-		    i++;
-		    continue;
-		  }
-		  else
-		    {
-		      while ((str[i] != ' ') || (str[i] != '\0'))
+		if(str[i] == ' ')
+		{
+			i++;
+			continue;
+		}
+		else
+		{
+			while ((str[i] != ' ') || (str[i] != '\0'))
 			{
-			 i++;
+				i++;
 			}
-		      count2++;
-		    }
+			count2++;
+		}
 	}
 
 
@@ -55,30 +55,30 @@ char **strtow(char *str)
 	while (str[i] != '\0')
 	{
 		if(str[i] == ' ')
-		  {
-		    i++;
-		    continue;
-		  }
-		  else
-		    {
-		      while ((str[i] != ' ') || (str[i] != '\0'))
+		{
+			i++;
+			continue;
+		}
+		else
+		{
+			while ((str[i] != ' ') || (str[i] != '\0'))
 			{
-			  *ptr[j] = str[i];
-			  j++;
-			  i++;
+				*ptr[j] = str[i];
+				j++;
+				i++;
 			}
-		      *ptr[j++] = '\n';
-		    }
+			*ptr[j++] = '\n';
+		}
 	}
-	/*	post = 0;
-	for (i = 0; i < count2; i++)
-	{
-		len = strlen(ptr[i]);
-		strncpy(str + post, ptr[i], len);
-		post += len;
-		str[post++] = '\n';
-	}
-	*/
+/**	post = 0;
+ *	for (i = 0; i < count2; i++)
+ *	{
+ *		len = strlen(ptr[i]);
+ *		strncpy(str + post, ptr[i], len);
+ *		post += len;
+ *		str[post++] = '\n';
+ *	}
+ */
 	*ptr[j] = '\0';
 
 	return (ptr);
