@@ -3,8 +3,8 @@
 
 /**
  * array_range - creates an array of integers
- * @min - minimum
- * @max - maximum
+ * @min: minimum
+ * @max: maximum
  * Return: pointer to new allocated space in memory
  */
 int *array_range(int min, int max)
