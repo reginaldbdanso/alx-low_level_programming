@@ -1,0 +1,32 @@
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * _realloc
+ * @ptr: pointer
+ * @old_size: old size
+ * @new_size: new size
+ * Return: pointer to new allocated space in memory
+ */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+{
+
+	int i;
+
+	if (min > max)
+		return (NULL);
+
+
+	ptr = malloc(sizeof(int) * ((max - min) + 1));
+	if (ptr == NULL)
+		return (NULL);
+
+
+	for (i = 0; min <= max; i++)
+	{
+		ptr[i] = min;
+		min++;
+	}
+
+	return (ptr);
+}
