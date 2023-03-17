@@ -12,36 +12,62 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 
 	void *newptr;
-	int i;
+	unsigned int copy_size;
 
 	if ((new_size == 0) && (ptr != NULL))
 	{
-	  free(ptr);
-	  return (NULL);
+		free(ptr);
+		return (NULL);
 	}
-	
-	if (new_size = old_size)
+
+	if (new_size == old_size)
 		return (ptr);
-	
+
 	if (ptr == NULL)
 	{
-	  newptr = malloc(new_size);
-	  	if (newptr == NULL)
+		newptr = malloc(new_size);
+		if (newptr == NULL)
 			return (NULL);
-	  return (newptr);
+		return (newptr);
 	}
-	
+
 	if (new_size > old_size)
 	{
-	  newptr = malloc(new_size);
-	  if (newptr == NULL)
-	    return (NULL);
-	  for (i = 0; i < old_size; i++)
-	    {
-	      newptr[i] = ptr[i];
-	    }
-	  free(ptr);
-	  return (newptr);
+		newptr = malloc(new_size);
+		if (newptr == NULL)
+			return (NULL);
+
+		if (old_size < new_size)
+		{
+			copy_size = old_size;
+		}
+		else
+			copy_size = new_size;
+
+		_memcpy(newptr, ptr, copy_size);
+		free(ptr);
+
 	}
-	  
+	return (newptr);
+}
+
+
+/**
+ *_memcpy - copies memory area
+ *@dest: destination memory area
+ *@src: source memory area
+ *@n: number of bytes
+ *
+ *Return: dest
+ */
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	int counter = 0;
+	int i = n;
+
+	for (; counter < i; counter++)
+	{
+		dest[counter] = src[counter];
+	}
+	return (dest);
 }
