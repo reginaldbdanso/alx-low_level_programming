@@ -17,14 +17,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (ptr == NULL)
 	{
 		printf("Memory allocation failed\n");
-		free(ptr);
 		return (NULL);
 	}
 	ptr->name = malloc(sizeof(char) * (_strlen(name) + 1));
 	if (ptr->name == NULL)
 	{
 		printf("Memory allocation failed\n");
-		free(ptr->name);
 		free(ptr);
 		return (NULL);
 	}
@@ -32,7 +30,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (ptr->owner == NULL)
 	{
 		printf("Memory allocation failed\n");
-		free(ptr->owner);
+		free(ptr->name);
 		free(ptr);
 		return (NULL);
 	}
