@@ -9,30 +9,33 @@
  */
 int main(int argc, char **argv)
 {
-int i, bytes;
+	int i, bytes;
+	char *main_code;
 
-if (argc != 2)
-{
-printf("Error\n");
-exit(1);
-}
+	main_code = (char *) main;
 
-bytes = atoi(argv[1]);
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
 
-if (bytes < 0)
-{
-printf("Error\n");
-exit(2);
-}
+	bytes = atoi(argv[1]);
 
-for (i = 0; i < bytes; i++)
-{
-printf("%.2hhx", main_code[i]);
-if (i == bytes - 1)
-printf("\n");
-else
-printf(" ");
-}
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
 
-return (0);
+	for (i = 0; i < bytes; i++)
+	{
+		printf("%.2hhx", main_code[i]);
+		if (i == bytes - 1)
+			printf("\n");
+		else
+			printf(" ");
+	}
+
+	return (0);
 }
