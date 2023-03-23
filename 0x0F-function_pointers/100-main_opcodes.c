@@ -25,8 +25,6 @@ printf("Error\n");
 exit(2);
 }
 
-char *main_code = (char *) main;
-
 for (i = 0; i < bytes; i++)
 {
 printf("%.2hhx", main_code[i]);
