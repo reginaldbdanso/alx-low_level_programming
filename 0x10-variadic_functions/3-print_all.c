@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "variadic_functions.h"
 
 
@@ -11,42 +9,39 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, j;
-	char *s;
+	int i = 0;
+	char *s, *cspace = "";
 	va_list arglist;
 
 	va_start(arglist, format);
-	while (format[i] != '\0')
+	if (format != NULL)
 	{
-		j = 0;
-		switch (format[i])
+		while (format[i] != '\0')
 		{
-		case 'c':
-			printf("%c", va_arg(arglist, int));
-			break;
-		case 'i':
-			printf("%d", va_arg(arglist, int));
-			break;
-		case 'f':
-			printf("%f", va_arg(arglist, double));
-			break;
-		case 's':
-			s = va_arg(arglist, char*);
-			switch (*s)
+			switch (format[i])
 			{
-			case 0:
-				printf("(nil)");
+			case 'c':
+				printf("%s%c", cspace, va_arg(arglist, int));
+				break;
+			case 'i':
+				printf("%s%d", cspace, va_arg(arglist, int));
+				break;
+			case 'f':
+				printf("%s%f", cspace, va_arg(arglist, double));
+				break;
+			case 's':
+				s = va_arg(arglist, char*);
+				if (s == NULL)
+					s = "(nil)";
+				printf("%s%s", cspace, s);
 				break;
 			default:
-				printf("%s", s);
+				i++;
+				continue;
 			}
-			break;
-		default:
-			j = 1;
+			cspace = ", ";
+			i++;
 		}
-		if ((format[i + 1] != '\0') && (j == 0))
-			printf(", ");
-		i++;
 	}
 	printf("\n");
 	va_end(arglist);
