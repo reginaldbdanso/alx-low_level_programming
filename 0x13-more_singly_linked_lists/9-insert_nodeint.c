@@ -29,12 +29,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 				return (NULL);
 			/* insert n value into new node */
 			new->n = n;
+			if (idx == 0)
+			{
+				new->next = temp1;
+				*head = new;
+				return (new);
+			}
 			/* insert new node into list*/
 			new->next = temp1;
 			temp2->next = new;
 			return (new);
 		}
-
 		/* move head pointer to the next node */
 		temp2 = temp1;
 		temp1 = temp1->next;
