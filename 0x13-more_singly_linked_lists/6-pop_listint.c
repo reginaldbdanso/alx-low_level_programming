@@ -11,11 +11,12 @@ int pop_listint(listint_t **head)
 	listint_t *temp;
 	int ndat;
 
-	/* Traverse the list and free each node */
+	/* Traverse the list */
 	temp = *head;
 	*head = (*head)->next;
 	/* Copy n field of the head node into ndat */
 	ndat = temp->n;
+	/* free each node */
 	free(temp);
 
 	return (ndat);
