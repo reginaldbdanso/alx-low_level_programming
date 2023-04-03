@@ -11,6 +11,8 @@ int pop_listint(listint_t **head)
 	listint_t *temp;
 	int ndat;
 
+	if (*head == NULL)
+		return (0);
 	/* Traverse the list */
 	temp = *head;
 	*head = (*head)->next;
