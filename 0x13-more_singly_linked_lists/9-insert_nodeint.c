@@ -14,7 +14,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int i = 0;
 
 		temp1 = temp2 = *head;
-	/* Traverse the list and free each node */
+	/* Traverse the list */
 	while (temp1 != NULL)
 	{
 		/* if the value of index matched the counter */
