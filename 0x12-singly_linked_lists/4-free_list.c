@@ -2,9 +2,9 @@
 
 /**
  * free_list -  frees a list_t list.
- * @head: double pointer
+ * @head: a pointer
  *
- * Return: number of nodes.
+ * Return:
  */
 void free_list(list_t *head)
 {
