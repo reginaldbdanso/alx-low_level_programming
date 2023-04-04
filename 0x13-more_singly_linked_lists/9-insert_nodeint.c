@@ -16,6 +16,18 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (head == NULL)
 		return (NULL);
 
+	/* create a new node */
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	/* insert n value into new node */
+	new->n = n;
+	if (idx == 0)
+	{
+		new->next = *head;
+		*head = new;
+		return (new);
+	}
 	temp1 = temp2 = *head;
 	/* Traverse the list */
 	while (temp1 != NULL)
@@ -23,18 +35,6 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		/* if the value of index matched the counter */
 		if (i == idx)
 		{
-			/* create a new node */
-			new = malloc(sizeof(listint_t));
-			if (new == NULL)
-				return (NULL);
-			/* insert n value into new node */
-			new->n = n;
-			if (idx == 0)
-			{
-				new->next = temp1;
-				*head = new;
-				return (new);
-			}
 			/* insert new node into list*/
 			new->next = temp1;
 			temp2->next = new;
