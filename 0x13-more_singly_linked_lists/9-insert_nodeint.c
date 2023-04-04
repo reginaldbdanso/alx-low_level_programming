@@ -45,5 +45,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		temp1 = temp1->next;
 		i++;
 	}
+	 /* check if index is out of range */
+	if (i < idx)
+		free(new);
 	return (NULL);
 }
