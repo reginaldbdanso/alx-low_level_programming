@@ -38,3 +38,17 @@ int get_bit(unsigned long int n, unsigned int index)
 	
 	return (-1);
 }
+
+int print_binary(unsigned int num)
+{
+	int counter = 0;
+
+		/*If num is greater than 1, continue the recursion*/
+			if (num > 1)
+					counter += print_binary(num / 2);
+						/*Print the least significant bit of num in binary form */
+							_putchar(num % 2 + '0');
+								counter++;
+									return (counter);
+									}
+									
