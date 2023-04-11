@@ -10,61 +10,16 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int counter = 1;
-	/* unsigned long int p = n; */
+	unsigned int sized = (sizeof(unsigned long int) * 8);
+	int bit;
 
-	/*If n is greater than 1, continue the recursion*/
-	if (n > 1)
-	{
-		counter += 1;
-		get_bit(n >> 1, index);
-	}
-	/*Print the least significant bit of n in binary form */
-	if (counter == index)
-	{
-		if (n & 1)
-		{
-			_putchar('1');
-			return (1);
-		}
-		else
-		{
-			_putchar('0');
-			return (0);
-		}
-	}
-	counter -= 1;
+	/*Check if the index is out of bounds*/
+	if (index >= sized)
+		return (-1);
 
-	
-	return (-1);
+	/*Right shift the bits index times*/
+	/*Perform a bitwise AND with 1 to get the bit at index*/
+	bit = ((n >> index) & 1);
+
+    return (bit);
 }
-
-char *print_binary(unsigned int num)
-{
-	int counter = 0;
-	char *binnum;
-
-	/*If num is greater than 1, continue the recursion*/
-	if (num > 1)
-		counter += print_binary(num / 2);
-	/*Print the least significant bit of num in binary form */
-	*(binnum++) = (num % 2 + '0');
-	counter++;
-	return (binnum);
-}
-
-int print_binary(unsigned int num)
-{
-	int counter = 0;
-	char none;
-
-	/*If num is greater than 1, continue the recursion*/
-	if (num > 1)
-		counter += print_binary(num / 2);
-	/*Print the least significant bit of num in binary form */
-	none = (num % 2 + '0');
-	(void)nonee;
-	counter++;
-	return (counter);
-}
-
