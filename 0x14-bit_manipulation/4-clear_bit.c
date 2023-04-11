@@ -18,7 +18,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	/*Left shift 1 in binary form index times*/
 	/*Perform a bitwise XOR with n to clear the bit at index*/
-	*n = (*n ^ (wan << index));
+	*n = (*n & ~(wan << index));
 
 	return (1);
 }
