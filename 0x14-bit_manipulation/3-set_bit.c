@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * set_bit - returns the value of a bit at a given index.
+ * set_bit - sets the value of a bit to 1 at a given index.
  * @n: nunber to be converted
  * @index: position of bit
- * Return: the value of the bit at index
- * index or -1 if an error occured
+ * Returns: 1 if it worked, or -1 if an error occurred
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
