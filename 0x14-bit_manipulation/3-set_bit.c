@@ -10,7 +10,6 @@
 int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int sized = (sizeof(unsigned long int) * 8);
-	int bit;
 
 	/*Check if the index is out of bounds*/
 	if (index >= sized)
