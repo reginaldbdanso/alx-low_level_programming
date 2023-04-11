@@ -17,7 +17,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	/*Right shift the bits index times*/
 	/*Perform a bitwise AND with 1 to get the bit at index*/
-	*n = ((*n >> index) | *n);
+	*n = ((*n >> index) | 1024);
 
 	return (1);
 }
