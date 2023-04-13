@@ -30,6 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		fclose(fp);
 		return (0);
 	}
+
 	byt_rd = fread(str, sizeof(char), letters, fp);
 	if (byt_rd <= 0)
 	{
@@ -37,6 +38,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(str);
 		return (0);
 	}
+
 	byt_wr = write(STDOUT_FILENO, str, byt_rd);
 	if (byt_wr != byt_rd)
 	{
@@ -44,6 +46,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(str);
 		return (0);
 	}
+
 	fclose(fp);
 	free(str);
 	return (byt_wr);
