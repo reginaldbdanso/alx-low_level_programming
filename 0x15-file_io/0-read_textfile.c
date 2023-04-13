@@ -11,36 +11,39 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	FILE *fp;
+	char *str;
+	ssize_t byt_rd;
+	ssize_t byt_wr;
+
 	if (filename == NULL)
+		return (0);
+
+	fp = fopen(filename, "r");
+	if (fp == NULL)
+		return (0);
+
+	str = malloc(sizeof(char) * (letters + 1));
+	if (str == NULL)
 	{
-		return 0;
-
-    FILE *fp = fopen(filename, "r");
-    if (fp == NULL) {
-        return 0;
-    }
-
-    char *buf = malloc(sizeof(char) * (letters + 1));
-    if (buf == NULL) {
-        fclose(fp);
-        return 0;
-    }
-
-    ssize_t bytes_read = fread(buf, sizeof(char), letters, fp);
-    if (bytes_read <= 0) {
-        fclose(fp);
-        free(buf);
-        return 0;
-    }
-
-    ssize_t bytes_written = write(STDOUT_FILENO, buf, bytes_read);
-    if (bytes_written != bytes_read) {
-        fclose(fp);
-        free(buf);
-        return 0;
-    }
-
-    fclose(fp);
-    free(buf);
-    return bytes_written;
+		fclose(fp);
+		return (0);
+	}
+	byt_rd = fread(str, sizeof(char), letters, fp);
+	if (byt_rd <= 0)
+	{
+		fclose(fp);
+		free(str);
+		return (0);
+	}
+	byt_wr = write(STDOUT_FILENO, str, byt_rd);
+	if (byt_wr != byt_rd)
+	{
+		fclose(fp);
+		free(str);
+		return (0);
+	}
+	fclose(fp);
+	free(str);
+	return (byt_wr);
 }
