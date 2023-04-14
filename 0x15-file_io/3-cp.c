@@ -1,9 +1,11 @@
 #include "main.h"
 
 /**
- * append_text_to_file - appends text at the end of a file.
- * @filename: name of file to create
- * @text_content: NULL terminated string to write to the file
+ * main - entry point
+ * Description: a program that copies the content of a
+ * file to another file
+ * @argc: number of arguments
+ * @argv: arrayof strings
  * Return: 1 on success, -1 on failure
  */
 
@@ -12,7 +14,7 @@
 int main(int argc, char *argv[]) 
 {
     if (argc != 3) {
-        dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
+        dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
         exit(97);
     }
 
