@@ -7,12 +7,6 @@
  * Return: 1 on success, -1 on failure
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <errno.h>
-
 #define BUF_SIZE 1024
 
 int main(int argc, char *argv[]) 
