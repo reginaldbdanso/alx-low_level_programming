@@ -21,7 +21,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (text_content != NULL)
 		fprint(fp, %s, text_content);
 	else
-	return (1);
+		return (1);
 
 	fclose(fp);
 	return (1);
