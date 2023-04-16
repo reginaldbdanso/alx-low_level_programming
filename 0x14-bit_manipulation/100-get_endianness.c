@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
  * get_endianness - writes the character c to stdout
