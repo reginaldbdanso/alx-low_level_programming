@@ -12,6 +12,8 @@ int get_endianness(void)
 	char *ptr;
 
 	x = 1;
+	/*Typecast the address of x to char* to make it*/
+	/*a pointer to the first bit*/
 	ptr = (char*)&x;
 
 	if (*ptr == 1)
