@@ -4,7 +4,7 @@
  * closing_time - closes the file descriptors
  * @fd_from: input file descriptor
  * @fd_to: output file descriptor
- * Return: 
+ * Return:
  */
 
 void closing_time(int fd_from, int fd_to)
@@ -29,7 +29,7 @@ void closing_time(int fd_from, int fd_to)
  * Return: 0 (Success)
  */
 
-int main(int argc, char *argv[]) 
+int main(int argc, char *argv[])
 {
 	int fd_from, fd_to;
 	char buf[1024];
@@ -58,9 +58,9 @@ int main(int argc, char *argv[])
 		if ((bytes_written == -1) || (bytes_written != bytes_read))
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-        		exit(99);
+			exit(99);
 		}
-        }
+	}
 	if (bytes_read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
