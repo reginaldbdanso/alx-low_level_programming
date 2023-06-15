@@ -18,8 +18,11 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	/* insert n value into new node */
 	new->n = n;
-	if (*h == NULL)
+	if (*h == NULL) /*if empty list*/
+	{
 		*h = new;
+		return (new);
+	}
 	if (idx == 0) /* insert at the beginning */
 	{
 		new->next = *h;
