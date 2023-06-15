@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * free_dlistint - closes the file descriptors
+ * free_dlistint - frees a dlistint_t list.
  * @head: head node receiving argument
  * Return:
  */
