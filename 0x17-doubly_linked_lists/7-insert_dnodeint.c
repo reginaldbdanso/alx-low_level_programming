@@ -43,7 +43,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		temp1 = temp1->next;
 		i++;
 	}
-	/*if (i < idx)*/ /* check if index is out of range */
-		/*free(new);*/
+	if (i < idx) /* check if index is out of range */
+		free(new);
 	return (NULL);
 }
