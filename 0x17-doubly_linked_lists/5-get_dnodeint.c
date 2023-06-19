@@ -8,20 +8,19 @@
  */
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	dlistint_t *temp;
 	unsigned int i = 0;
 
+	if (head == NULL)
+		return (NULL);
 	/* Traverse the list and free each node */
 	while (head != NULL)
 	{
-		temp = head;
 		/* if the value of index matched the counter */
 		if (i == index)
-			return (temp);
-
+			return (head);
 		/* move head pointer to the next node */
 		head = head->next;
 		i++;
 	}
-	return (NULL);
+	return (head);
 }

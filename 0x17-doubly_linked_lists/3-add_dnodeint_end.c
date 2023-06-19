@@ -16,6 +16,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		printf("Error\n");
 		return (NULL);
 	}
+	new->n = n;
 	if (*head == NULL) /* if empty list */
 	{
 		new->prev = new->next = NULL;
@@ -25,7 +26,6 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	temp = *head;
 	while (temp->next != NULL) /* Otherwise */
 		temp = temp->next;
-	new->n = n;
 	temp->next = new;
 	new->prev = temp;
 	new->next = NULL;
