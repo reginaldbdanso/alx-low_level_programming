@@ -31,7 +31,7 @@ if (my_hash_table->array == NULL)
 
     /* initialize each element of the array to NULL */
 	i = 0;
-	while(i < size)
+	while (i < size)
 	{
 		my_hash_table->array[i] = NULL;
 		i++;
