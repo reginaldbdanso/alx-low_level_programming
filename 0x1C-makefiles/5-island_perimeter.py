@@ -16,6 +16,24 @@ def is_rectangular(grid):
         return False
     return True
 
+def is_0_surrounded(grid):
+    """
+    Returns true if island is surrounded
+    by water and false if otherwise
+    """
+
+    gridlen = len(grid)
+    for i in grid[0]:
+        if i == 1:
+            first_row = 1
+            break
+    for j in grid[gridlen-1]:
+        if j == 1:
+            last_row = 0
+            break
+        return False
+    return True
+
 
 def is_island_one_piece(grid):
     """
