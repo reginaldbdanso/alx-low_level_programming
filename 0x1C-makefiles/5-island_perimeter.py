@@ -28,7 +28,7 @@ def is_island_one_piece(grid):
                     if grid[i+1][j] == 1:
                         below = True
                     else:
-                        to_right = False
+                        below = False
 
                 if to_right is False and below is False:
                     # check if we're on the penultimate row
@@ -65,4 +65,4 @@ def island_perimeter(grid):
         perimeter *= 2
         return perimeter
     else:
-        return None
+        return
