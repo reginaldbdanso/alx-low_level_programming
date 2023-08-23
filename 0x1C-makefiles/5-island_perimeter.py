@@ -10,7 +10,7 @@ def is_rectangular(grid):
     and false if otherwise
     """
 
-    height = len(grid) 
+    height = len(grid)
     width = len(grid[0])
     if width == height or width > 100 or height > 100:
         return False
