@@ -4,6 +4,19 @@ Island perimeter calc module
 """
 
 
+def is_rectangular(grid):
+    """
+    Returns true if island is rectangular
+    and false if otherwise
+    """
+
+    height = len(grid) 
+    width = len(grid[0])
+    if width == height or width > 100 or height > 100:
+        return False
+    return True
+
+
 def is_island_one_piece(grid):
     """
     Returns true if island is one piece
@@ -42,7 +55,7 @@ def island_perimeter(grid):
     """
     Returns the perimeter of the island described in grid
     """
-    if is_island_one_piece(grid):
+    if is_island_one_piece(grid) and is_rectangular(grid):
         perimeter = 0
         for ingrid in grid:
             i = 0
