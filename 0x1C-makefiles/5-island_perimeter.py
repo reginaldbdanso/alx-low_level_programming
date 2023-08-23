@@ -9,7 +9,7 @@ def is_island_one_piece(grid):
     Returns true if island is one piece
     and false if otherwise
     """
-    
+
     for i in range(len(grid)):
         for j in range(len(grid[i])):
             if grid[i][j] == 1:
@@ -30,13 +30,13 @@ def is_island_one_piece(grid):
                     else:
                         to_right = False
 
-                if to_right == False and below == False:
+                if to_right is False and below is False:
                     # check if we're on the penultimate row
                     if i+2 < len(grid):
                         return False
 
-
     return True
+
 
 def island_perimeter(grid):
     """
